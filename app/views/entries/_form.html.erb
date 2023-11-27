@@ -1,14 +1,17 @@
 <%= form_with(model: entry) do |form| %>
   <% if entry.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(entry.errors.count, "error") %> prohibited this entry from being saved:</h2>
-
+  <div class="message is-danger">
+    <div class="message-header">
+      <p><%= pluralize(entry.errors.count, "error") %> prohibited this entry from being saved:</p>
+    </div>
+    <div class="message-body">
       <ul>
         <% entry.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
     </div>
+  </div>
   <% end %>
 
   <div>
@@ -28,12 +31,19 @@
 
   <div>
     <%= form.label :carbohydrates, class:"label" %>
-    <%= form.text_field :carbohydrates, class:"input" %>
+    <%= form.number_field :carbohydrates, class:"input" %>
   </div>
 
   <div>
     <%= form.label :fats, class:"label" %>
     <%= form.number_field :fats, class:"input" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :category_id, class:"label" %>
+    <div class="select">
+      <%= form.select :category_id, Category.all.collect {|u| [u.title, u.id]} %>    
+    </div>
   </div>
 
   <div class="actions mt-3">
