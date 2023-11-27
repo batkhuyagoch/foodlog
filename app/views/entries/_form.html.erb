@@ -12,36 +12,31 @@
   <% end %>
 
   <div>
-    <%= form.label :meal_type, style: "display: block" %>
-    <%= form.text_field :meal_type %>
+    <%= form.label :meal_type, class:"label" %>
+    <%= form.text_field :meal_type, class:"input" %>
   </div>
 
   <div>
-    <%= form.label :calories, style: "display: block" %>
-    <%= form.number_field :calories %>
+    <%= form.label :calories, class:"label" %>
+    <%= form.number_field :calories, class:"input" %>
   </div>
 
   <div>
-    <%= form.label :proteins, style: "display: block" %>
-    <%= form.number_field :proteins %>
+    <%= form.label :proteins, class:"label" %>
+    <%= form.number_field :proteins, class:"input" %>
   </div>
 
   <div>
-    <%= form.label :carbohydrates, style: "display: block" %>
-    <%= form.text_field :carbohydrates %>
+    <%= form.label :carbohydrates, class:"label" %>
+    <%= form.text_field :carbohydrates, class:"input" %>
   </div>
 
   <div>
-    <%= form.label :integer, style: "display: block" %>
-    <%= form.text_field :integer %>
+    <%= form.label :fats, class:"label" %>
+    <%= form.number_field :fats, class:"input" %>
   </div>
 
-  <div>
-    <%= form.label :fats, style: "display: block" %>
-    <%= form.number_field :fats %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+  <div class="actions mt-3">
+    <%= form.submit class:"button is-success"%>
   </div>
 <% end %>

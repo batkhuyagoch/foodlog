@@ -1,14 +1,13 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Entries</h1>
-
-<div id="entries">
+<% content_for :title do %>
+  Foodlog &ndash; <%= I18n.l(DateTime.now, format: :custom_day_month_year_format) %>
+<% end %>
   <% @entries.each do |entry| %>
-    <%= render entry %>
-    <p>
-      <%= link_to "Show this entry", entry %>
-    </p>
+    <div class="columns mt-6 is-centered">
+      <%= render entry %>
+    </div>
   <% end %>
-</div>
 
-<%= link_to "New entry", new_entry_path %>
+
+<div class="columns is-centered mt-6">
+  <%= link_to "View all entries", archives_index_path, class:"button is-link is-outlined is-centered"%>
+</div>
